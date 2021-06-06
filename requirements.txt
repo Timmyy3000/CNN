@@ -1,6 +1,6 @@
-tensorflow
-streamlit
-numpy==1.18.3
-opencv-python
-Pillow
+tensorflow==2.0.0
+streamlit==0.72.0
+numpy==1.19.5
+opencv-python==4.2.0.32
+Pillow==8.2.0
 h5py
