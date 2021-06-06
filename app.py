@@ -37,7 +37,7 @@ st.code('''Accuracy : ~81.5%
 Test it Below :''')
 
 
-file_img = st.file_uploader("Upload an image of your pet Dog or Cat", type ="jpg")
+file_img = st.file_uploader("Upload an image of your pet Dog or Cat")
 
 if file_img is not None:
     image_ = Image.open(file_img)
