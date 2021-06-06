@@ -31,12 +31,53 @@ if file_img is not None:
     # Test model
     result = loaded_model.predict(test_image/255)
 
+    possible_dog_responses = ['Aww, what a cute little doggy',
+                                "That's definitely a sleek Dog",
+                                "Cool Dog,hope he doesn't bite",
+                                "Woof, woof! I speak fluent Dog-ish",
+                                 "Those ears, that fur, those eyes. Yup, That's a good ol' dog",
+                                 "Canine Confirmed, Dog in sight"]
+    possible_cat_responses = ["An elegant Cat indeed",
+                                "Meow, meow",
+                                "That's one sleek looking Cat",
+                                "8 Lives, Cats are awesome",
+                                "I hope your Cat doesn't bite", 
+                                "Want some lasagna, Kitty ?"]
 
-    if result[0][0] > 0.5 :
-        prediction_test = 1
+    import random
+
+    result = result[0][0]
+    isDog = False
+    isCat = True
+    
+
+    if result > 0.5 :
+        n = random.randint(0,5)
+        pred = "Dog"
+        prediction_test = possible_dog_responses[n]
+        isDog = True
+        isCat = False
+
+
     else :
-        prediction_test = 2
+        n = random.randint(0,5)
+        pred = "Cat"
+        prediction_test = possible_cat_responses[n]
+        isCat = True
+        isDog = False
 
-    possible_dog_responses = ['Aww, what a cute little doggy',"That's definitely a sleek Dog","Cool Dog,hope he doesn't bite","Woof, woof! I speak fluent Dog-ish", "Those ears, that fur, those eyes. Yup, That's a good ol' dog"]
-    possible_cat_responses = ["An elegant Cat indeed","Meow, meow","That's one sleek looking Cat","8 Lives, Cat's are awesome",""]
+    st.subheader(pred)
     st.write(prediction_test)
+    
+    if isDog :
+        dog_prob = ((result - 0.5 ) / 0.5 )* 100
+        cat_prob = 100 - dog_prob
+
+    if isCat :
+        cat_prob = (( 0.5 - result ) / 0.5 )* 100
+        dog_prob = 100 - cat_prob
+
+    st.subheader("Probabilities")
+    st.write(f"Dog : {dog_prob:.2f} %")
+    st.write(f"Cat : {cat_prob:.2f} %")
+
