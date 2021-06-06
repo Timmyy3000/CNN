@@ -1,6 +1,6 @@
 tensorflow
 streamlit
 numpy==1.18.3
-opencv-python==4.2.0.34
-Pillow==7.1.1
-h5py==2.9.0
+opencv-python
+Pillow
+h5py
