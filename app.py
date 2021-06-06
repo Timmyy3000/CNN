@@ -87,8 +87,6 @@ if file_img is not None:
             prediction_test = possible_dog_responses[n]
             isDog = True
             isCat = False
-
-
         else :
             n = random.randint(0,5)
             pred = "Cat"
@@ -100,13 +98,10 @@ if file_img is not None:
         st.write(f'''## {pred}
         {prediction_test} ''')
         
-        if isDog :
-            dog_prob = ((result - 0.5 ) / 0.5 )* 100
-            cat_prob = 100 - dog_prob
 
-        if isCat :
-            cat_prob = (( 0.5 - result ) / 0.5 )* 100
-            dog_prob = 100 - cat_prob
+        dog_prob = result * 100
+        cat_prob = 100 - dog_prob
+            
 
         st.write('''## Probabilities''')
         st.write(f'''Dog : {dog_prob:.2f} %''')
