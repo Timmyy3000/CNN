@@ -36,6 +36,6 @@ A CNN
 
 Links :
 
-https://towardsdatascience.com/wtf-is-image-classification-8e78a8235acb
+[Medium article ](https://towardsdatascience.com/wtf-is-image-classification-8e78a8235acb)
 
 https://ijcsit.com/docs/Volume%207/vol7issue5/ijcsit20160705014.pdf
