@@ -51,6 +51,7 @@ if file_img is not None:
 
     loaded_model = tf.keras.models.load_model('cnn_model')
 
+    
     # Test model
     result = loaded_model.predict(test_image/255)
 
@@ -117,3 +118,22 @@ if file_img is not None:
         else :
             st.subheader("Unsure : Not really confident in my prediction :/")
 
+st.write("""
+----
+Thanks for trying out my app :)
+
+If the AI got your pets wrong and needs more tranining or you just want to contact me, let me know.
+
+Mail: ogunmetimilehin@gmail.com
+
+Find me on my [Website](https://timilehinogunme.netlify.app/)
+
+
+The code for this project is up on Github [here](https://github.com/Timmyy3000/CNN)
+
+This project is Part of my [#100DaysOfCode](https://github.com/Timmyy3000/100-days-of-code) Challenge 
+
+_GodSpeed!_
+
+""")
+   
