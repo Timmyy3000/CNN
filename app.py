@@ -1,13 +1,36 @@
 import streamlit as st 
 from PIL import Image
-
-
-
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image 
 
+
+
 st.title("Pet Classifier")
+
+st.write("""
+A CNN works by extracting features from images. This eliminates the need for manual feature extraction. The features are not trained! They’re learned while the network trains on a set of images. This makes deep learning models extremely accurate for computer vision tasks. CNNs learn feature detection through tens or hundreds of hidden layers. Each layer increases the complexity of the learned features.
+
+----
+
+### A CNN
+- starts with an input image
+- applies many different filters to it to create a feature map
+- applies a ReLU function to increase non-linearity
+- applies a pooling layer to each feature map
+- flattens the pooled images into one long vector.
+- inputs the vector into a fully connected artificial neural network.
+- processes the features through the network. The final fully connected 
+- layer provides the “voting” of the classes that we’re after.
+- trains through forward propagation and backpropagation for many, many epochs. This repeats until we have a well-defined neural network with trained weights and feature detectors.
+
+----
+ 
+#### This CNN can distinguish between imgaes of Dogs and Cats
+
+Test it Below :)
+""")
+
 
 file_img = st.file_uploader("Upload an image of your pet Dog or Cat", type ="jpg")
 
@@ -80,4 +103,16 @@ if file_img is not None:
     st.subheader("Probabilities")
     st.write(f"Dog : {dog_prob:.2f} %")
     st.write(f"Cat : {cat_prob:.2f} %")
+
+    if isDog :
+        if dog_prob >= 80 :
+            st.subheader("Confident : Pretty sure I got it right XD")
+        else :
+            st.subheader("Unsure : Not really confident in my prediction :/")
+    
+    if isCat :
+        if cat_prob >=  80 :
+            st.subheader("Confident : Pretty sure I got it right XD")
+        else :
+            st.subheader("Unsure : Not really confident in my prediction :/")
 
