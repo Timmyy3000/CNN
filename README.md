@@ -36,6 +36,6 @@ A CNN
 
 Links :
 
-[Medium article ](https://towardsdatascience.com/wtf-is-image-classification-8e78a8235acb)
+[The Complete Beginner’s Guide to Deep Learning: Convolutional Neural Networks and Image Classification](https://towardsdatascience.com/wtf-is-image-classification-8e78a8235acb)
 
-https://ijcsit.com/docs/Volume%207/vol7issue5/ijcsit20160705014.pdf
+[Applications of Convolutional Neural Networks paper by Ashwin Bhandare, Maithili Bhide, Pranav Gokhale, Rohan Chandavarkar](https://ijcsit.com/docs/Volume%207/vol7issue5/ijcsit20160705014.pdf)
