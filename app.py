@@ -89,8 +89,9 @@ if file_img is not None:
         isCat = True
         isDog = False
 
-    st.subheader(pred)
-    st.write(prediction_test)
+
+    st.write(f'''## {pred}
+    {prediction_test} ''')
     
     if isDog :
         dog_prob = ((result - 0.5 ) / 0.5 )* 100
@@ -100,9 +101,9 @@ if file_img is not None:
         cat_prob = (( 0.5 - result ) / 0.5 )* 100
         dog_prob = 100 - cat_prob
 
-    st.subheader("Probabilities")
-    st.write(f"Dog : {dog_prob:.2f} %")
-    st.write(f"Cat : {cat_prob:.2f} %")
+    st.write('''## Probabilities''')
+    st.write(f'''Dog : {dog_prob:.2f} %''')
+    st.write(f'''Cat : {cat_prob:.2f} %''')
 
     if isDog :
         if dog_prob >= 80 :
